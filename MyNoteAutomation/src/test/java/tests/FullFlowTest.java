@@ -35,9 +35,9 @@ public class FullFlowTest extends BaseTest {
        //Notes Page
         NotesPage notes = new NotesPage(driver);
         // Create a note
-        notes.createNote("My First Note", "This is a test note");
+        notes.createNote("Automation Note", "This note consist of the automation process for My Notes.");
         // Edit the note
-        notes.editNote("Edited Note");
+        notes.editNote("Automation Note2");
         // Delete the note
         notes.deleteNote();
         System.out.println("Full flow test completed successfully!");

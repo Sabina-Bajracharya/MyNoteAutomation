@@ -9,34 +9,45 @@ import java.time.Duration;
 public class NotesPage {
 
     WebDriver driver;
+    WebDriverWait wait;
 
     public NotesPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-    
-    //To create a new note.
+
+    // To create a new note
     public void createNote(String title, String description) {
-        driver.findElement(By.xpath("//button[text()='Add Note']")).click();
-        driver.findElement(By.xpath("//input[@id='title']")).sendKeys(title);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary mt-3 mt-lg-0']"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='title']"))).sendKeys(title);
+
         driver.findElement(By.xpath("//textarea[@id='description']")).sendKeys(description);
-        driver.findElement(By.xpath("//button[normalize-space()='Create']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Create']"))).click();
     }
-    
-    //To edit an existing note.
+
+    // To edit an existing note
     public void editNote(String newTitle) {
-        driver.findElement(By.xpath("//button[normalize-space()='Edit']")).click();
-        WebElement title = driver.findElement(By.xpath("//input[@id='title']"));
-        title.clear();
-        title.sendKeys("newTitle");
-        driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Edit']"))).click();
+
+        WebElement titleField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='title']")));
+
+        titleField.clear();
+        titleField.sendKeys(newTitle);
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Save']"))).click();
     }
-    
-    // To delete an existing note.
+
+    // To delete an existing note
     public void deleteNote() {
 
-        driver.findElement(By.xpath("//button[normalize-space()='Delete']")).click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='button'][normalize-space()='Delete']")));
-        driver.findElement(By.xpath("//button[@type='button'][normalize-space()='Delete']")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[normalize-space()='Delete']")
+        )).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@type='button'][normalize-space()='Delete']")
+        )).click();
     }
 }
