@@ -3,6 +3,7 @@ package tests;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.FirstLoginPage;
 import pages.NotesPage;
 import pages.SignUpPage;
 
@@ -16,11 +17,16 @@ public class FullFlowTest extends BaseTest {
         // Create Account Page
         SignUpPage signUp = new SignUpPage(driver);
         String name = "TestUser";
-        String email ="test@gmail.com";
-        // String email = "user" + UUID.randomUUID() + "@test.com";
+//        String email ="test@gmail.com";
+        String email = "user" + UUID.randomUUID() + "@test.com";
+        System.out.println(email);
         String password = "Test123!";
 
         signUp.register(name, email, password);
+
+        // Logout
+        FirstLoginPage firstloginPage = new FirstLoginPage(driver);
+        firstloginPage.firstlogin();
 
         // Login Page
         LoginPage login = new LoginPage(driver);
