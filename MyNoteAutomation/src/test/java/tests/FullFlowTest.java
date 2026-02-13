@@ -29,7 +29,7 @@ public class FullFlowTest extends BaseTest {
        //Notes Page
         NotesPage notes = new NotesPage(driver);
         // Create a note
-        notes.createNote("This is a test note");
+        notes.createNote("My First Note", "This is a test note");
         // Edit the note
         notes.editNote("Edited Note");
         // Delete the note
