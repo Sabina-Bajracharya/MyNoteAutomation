@@ -17,16 +17,17 @@ Before running the tests, make sure you have the following prerequisites set up:
 ## Installation
 1. Install the "IntelliJ IDEA Community Edition" version of IntelliJ from this link https://www.jetbrains.com/idea/download/?section=windows based on your OS.
 2. Install JDK version 17 bin file from https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html based on your OS.
-3. Install the latest Google Chrome browser on your device.
-4. Install the Chrome driver from https://chromedriver.chromium.org/downloads. Make sure the Chrome driver version is compatible with the Chrome browser.
+3. Install the Google Chrome browser version 145.0.7632.68 (Official Build) (64-bit) on your device.
+4. Install the Google Chrome driver version 145.0.7632.67 on your device from https://googlechromelabs.github.io/chrome-for-testing/#stable.
+5. Make sure the Chrome driver version is compatible with the Chrome browser.
 
 ## Getting Started
 1. Clone the project from GitHub.
 2. Open IntelliJ and choose the Maven Project.
 3. Open the cloned project on IntelliJ.
 4. Open the pom.xml file to load the Maven Dependencies
-5. Click on the Maven symbol shown on the image below to load all the presented Maven Dependencies.
-6. The Maven Dependencies consist of  Selenium Webdriver, Junit, TestNG, and Extent Reports.
+5. Click on the Maven symbol on pom.xml to load all the presented Maven Dependencies.
+6. The Maven Dependencies consist of  Selenium Webdriver, Junit, and TestNG.
 8. Run the test by right-clicking on FullFowTest and clicking on run.
 9. Leave the automation browser till it closes itself to generate the real-time report.
 10. If the automated browser is closed before finishing the automation, the real-time report will not overwrite.
