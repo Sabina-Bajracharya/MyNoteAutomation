@@ -27,9 +27,12 @@ public class NotesPage {
         driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
     }
     
-    //To delete an existing note.
+    // To delete an existing note.
     public void deleteNote() {
+
         driver.findElement(By.xpath("//button[normalize-space()='Delete']")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='button'][normalize-space()='Delete']")));
         driver.findElement(By.xpath("//button[@type='button'][normalize-space()='Delete']")).click();
     }
 }
