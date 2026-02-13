@@ -12,7 +12,7 @@ public class RegressionTest extends BaseTest {
         LoginPage login = new LoginPage(driver);
         NotesPage notes = new NotesPage(driver);
 
-        login.login("existinguser@test.com", "Test123!");
+        login.login("test@gmail.com", "Test123!");
         notes.createNote("Old Title", "Desc");
         notes.editNote("Updated Title");
         notes.deleteNote();
