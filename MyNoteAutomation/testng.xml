@@ -3,6 +3,7 @@
 
     <test name="Tests">
         <classes>
+            <class name="tests.FullFlowTest"/>
             <class name="tests.SmokeTest"/>
             <class name="tests.RegressionTest"/>
         </classes>
