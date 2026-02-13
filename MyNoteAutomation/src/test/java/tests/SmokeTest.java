@@ -10,7 +10,7 @@ public class SmokeTest extends BaseTest {
     @Test(groups = {"smoke"})
     public void signupLoginCreateNote() {
 
-        String email = "user" + UUID.randomUUID() + "@test.com";
+        String email = "test@gmail.com";
         String password = "Test123!";
 
         SignUpPage signUp = new SignUpPage(driver);
